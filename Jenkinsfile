@@ -1,8 +1,12 @@
 pipeline {
     agent { 
         node {
-            echo 'env.PATH=' + env.PATH
-            sh('env')
+            stages {
+                stage('Build') {
+                     echo 'env.PATH=' + env.PATH
+                     sh('env')
+                    }
+                }
             }
           }
 }
