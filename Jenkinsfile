@@ -6,7 +6,6 @@ pipeline {
 	  script {
 	    env.SHCOM = echo 'HelloWorldsing'
 	  	}
-	  sh "${env.SHCOM}"
 	    }
 	}
     }
