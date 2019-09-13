@@ -1,12 +1,13 @@
-pipeline {
-    agent { 
-        node {
-            stages {
-                stage('Stage1') {
-                     echo 'env.PATH=' + env.PATH
-                     sh('env')
-                    }
-                }
-            }
-          }
-}
+agent any
+	    stages {
+	    	stage('Stage1') {
+	    	    steps {
+	                sh ‘echo “Hello Worldas”’
+	                sh ‘’’
+	                    echo “Multiline shell steps work too”
+			    ls -lah
+			‘’’
+	            }
+	        }
+	    }
+	}
