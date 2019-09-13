@@ -1,5 +1,5 @@
 pipeline {
-    node('master', {
+    node {
         echo 'env.PATH=' + env.PATH
         sh('env')
          agent any
