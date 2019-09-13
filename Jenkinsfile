@@ -1,7 +1,8 @@
 pipeline {
-    agent 
-    node {
-        echo 'env.PATH=' + env.PATH
-        sh('env')
+    agent { 
+        node {
+            echo 'env.PATH=' + env.PATH
+            sh('env')
+            }
           }
-      }
+}
