@@ -10,7 +10,7 @@ pipeline {
 		       echo "Multiline steps works too"
 		       ls -lah
 		     '''
-		     withAWS(credentials: 'aws-static', region: 'us-west-1') {
+		     withAWS(credentials: 'aws-static', region: 'us-west-2') {
                          s3Upload bucket: 'jenkinsmahabucket', includePathPattern: "*.html", workingDir: '.'
                     }
 	     } 
