@@ -1,13 +1,12 @@
 pipeline { 
    agent any 
       stages { 
-	  stage('Build') { 
+	  stage('UploadToAWS') { 
              steps { 
 		     sh 'echo "Hello World"'
 		     sh 'pwd'
-		    sh 'ls -lt'
 		     sh '''
-		       echo "Multiline steps works too"
+		       echo "Multiline steps test"
 		       ls -lah
 		     '''
 		     withAWS(credentials: 'aws-static') {
