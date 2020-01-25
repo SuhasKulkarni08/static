@@ -1,12 +1,7 @@
 pipeline { 
    agent any 
-      stages { 
-	  stage('Lint HTML') { 
-             steps {
-		 sh 'tidy -q -e *.html'    
-	     }
-	  }
-	  stage('UploadToAWS') { 
+      stages {
+	  stage('build') { 
              steps { 
 		     sh 'echo "Hello World"'
 		     sh 'pwd'
@@ -14,9 +9,7 @@ pipeline {
 		       echo "Multiline steps test"
 		       ls -lah
 		     '''
-		     withAWS(credentials: 'aws-static') {
-                         s3Upload bucket: 'jenkinsmahabucket', includePathPattern: "*.html", workingDir: '.'
-                    }
+		     
 	     } 
 	  } 
       } 
